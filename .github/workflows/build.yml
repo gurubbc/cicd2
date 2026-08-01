@@ -25,3 +25,9 @@ jobs:
 
       - name: Build Project
         run: mvn clean package
+
+      - name: Deploy to Tomcat
+        run: |
+          curl -v -u ${{ secrets.TOMCAT_USERNAME }}:${{ secrets.TOMCAT_PASSWORD }} \
+          --upload-file target/cicd2-1.war \
+          "${{ secrets.TOMCAT_URL }}/manager/text/deploy?path=/cicd-demo&update=true"
