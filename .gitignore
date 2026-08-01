@@ -1,0 +1,14 @@
+# Eclipse
+.metadata/
+.settings/
+.classpath
+.project
+
+# Maven
+target/
+
+# STS
+.springBeans
+
+# Logs
+*.log
